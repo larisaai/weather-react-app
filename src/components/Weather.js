@@ -3,7 +3,7 @@ import React, {Component} from "react";
 
 export default class Weather extends Component {
 render(){
-	const { city, country, temperature, temperature_min, temperature_max, humidity, pressure,description, error} = this.props;
+	const { city, country, temperature, temperature_min, temperature_max, humidity, pressure, visibility ,description, error} = this.props;
   return (
     <div className="weather__info">
       {city && country && (
@@ -27,6 +27,9 @@ render(){
 			</p>
 			<p className="weather-key">Pressure:
 				<span className="weather-value"> {pressure} hpa</span>
+			</p>
+			<p className="weather-key">Visivility:
+				<span className="weather-value"> {Number(visibility) / 1000} km</span>
 			</p>
 
 			<p className="weather-key">Conditions:
