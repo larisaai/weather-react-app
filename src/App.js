@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-// import Titles from "./components/Titles";
+import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -29,9 +29,9 @@ class App extends Component {
 
     if (city && country) {
       this.setState({
-        temperature: data.main.temp  ,
-        temperature_min: data.main.temp_min,
-        temperature_max: data.main.temp_max,
+        temperature: Math.floor(data.main.temp)  ,
+        temperature_min: Math.floor(data.main.temp_min),
+        temperature_max: Math.floor(data.main.temp_max),
         city: data.name,
         country: data.sys.country,
         humidity: data.main.humidity,
@@ -60,7 +60,7 @@ class App extends Component {
 
             <div className="wrapper">
               <div className="title-container">
-                {/* <Titles /> */}
+                <Titles />
               </div>
               <div className=" form-container">
                 <Form getWeather={this.getWeather} />

@@ -5,9 +5,9 @@ export default class Titles extends Component {
 render(){
   return (
   <div>
-    <h1 className="">Weather Finder</h1>
+    <h1 className="">Weather Web app</h1>
     <p className="">
-      Find out temperture, conditions and more...
+          Write corectly the city name and the country name in order to fnd the weather
     </p>
   </div>
 )}

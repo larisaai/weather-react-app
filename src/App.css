@@ -58,11 +58,11 @@ input[type="text"] {
 input[type="text"] {
   outline: none;
 }
-
+/* 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #1b344e inset;
   -webkit-text-fill-color: #fff !important;
-}
+} */
 
 button {
   border: 0;
