@@ -3,7 +3,7 @@ import React, {Component} from "react";
 
 export default class Weather extends Component {
 render(){
-	const { city, country, temperature, temperature_min, temperature_max, humidity, description, error} = this.props;
+	const { city, country, temperature, temperature_min, temperature_max, humidity, pressure,description, error} = this.props;
   return (
     <div className="weather__info">
       {city && country && (
@@ -13,17 +13,20 @@ render(){
 			</p>
 
 			<p className="weather-key">Temperature:
-				<span className="weather-value"> {temperature} C </span>
+				<span className="weather-value"> {temperature}°C </span>
 			</p>
 			<p className="weather-key">Min:
-				<span className="weather-value"> {temperature_min} C</span>
+				<span className="weather-value"> {temperature_min}°C</span>
 			</p>
 			<p className="weather-key">Max:
-				<span className="weather-value"> {temperature_max} C </span>
+				<span className="weather-value"> {temperature_max}°C </span>
 			</p>
 
 			<p className="weather-key">Humidity:
-				<span className="weather-value"> {humidity}</span>
+				<span className="weather-value"> {humidity}%</span>
+			</p>
+			<p className="weather-key">Pressure:
+				<span className="weather-value"> {pressure} hpa</span>
 			</p>
 
 			<p className="weather-key">Conditions:

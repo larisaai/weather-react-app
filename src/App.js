@@ -13,6 +13,7 @@ class App extends Component {
     city: undefined,
     country: undefined,
     humidity: undefined,
+    pressure: undefined,
     description: undefined,
     error: undefined
   };
@@ -33,6 +34,7 @@ class App extends Component {
         city: data.name,
         country: data.sys.country,
         humidity: data.main.humidity,
+        pressure: data.main.pressure,
         description: data.weather[0].description,
         error: ""
       });
@@ -44,6 +46,7 @@ class App extends Component {
         city: undefined,
         country: undefined,
         humidity: undefined,
+        pressure: undefined,
         description: undefined,
         error: "Please enter the values"
       });
@@ -62,7 +65,7 @@ class App extends Component {
                   temperature={this.state.temperature}
                   temperature_min={this.state.temperature_min}
                   temperature_max={this.state.temperature_max}
-
+                  pressure = {this.state.pressure}
                   city={this.state.city}
                   country={this.state.country}
                   humidity={this.state.humidity}
