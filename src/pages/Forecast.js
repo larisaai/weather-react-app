@@ -23,6 +23,7 @@ export default class Forecast extends Component {
     const API = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=1d9eadfd959a277cf87d476b23a8cc86`
     );
+
     const data = await API.json();
 
     if (city && country) {

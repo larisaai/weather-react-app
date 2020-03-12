@@ -12,7 +12,7 @@ class App extends Component {
         <div className="body-bg">
           <Nav />
           <Switch>
-              <Route path="/home" component={(props) => <Main {...props}/>}/>
+              <Route exact path="/" component={(props) => <Main {...props}/>}/>
               </Switch>
               <Switch>
               <Route path="/forecast" component={(props) => <Forecast {...props}/>}/>
