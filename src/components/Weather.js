@@ -12,7 +12,9 @@ render(){
 			<p className="weather-key">Location:
 				<span className="weather-value">{city}, {country}</span>
 			</p>
-			<WeatherIcons></WeatherIcons>
+			<p className="weather-key">
+				<WeatherIcons></WeatherIcons>
+			</p>
 			<p className="weather-key">Temperature:
 				<span className="weather-value"> {temperature}°C </span>
 			</p>

@@ -8,7 +8,8 @@ import { WiCloudyGusts } from "react-icons/wi";
 
 
  export default class WeatherIcons extends Component {
-// NEED TO FIN A BETTER SOLUTION
+
+  // NEED TO FIN A BETTER SOLUTION
   render() {
     const { description } = this.props;
       if ( description === '	clear sky' || '	few clouds') {

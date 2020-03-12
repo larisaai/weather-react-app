@@ -7,7 +7,7 @@ render(){
   <div>
     <h1 className="">Weather Web app</h1>
     <p className="">
-          Write the corect name of the city and the country in order to found the weather of the desired place.
+          Go to the forecat section and write the corect name of the city and the country in order to found the weather of the desired place..
     </p>
   </div>
 )}
