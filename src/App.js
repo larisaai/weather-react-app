@@ -36,8 +36,10 @@ class App extends Component {
         country: data.sys.country,
         humidity: data.main.humidity,
         pressure: data.main.pressure,
+        icon:data.icon,
         visibility: data.visibility,
         description: data.weather[0].description,
+        
         error: ""
       });
     } else {
@@ -50,6 +52,7 @@ class App extends Component {
         humidity: undefined,
         pressure: undefined,
         visibility:undefined,
+        icon:undefined,
         description: undefined,
         error: "Please enter the values"
       });
@@ -74,6 +77,7 @@ class App extends Component {
                   country={this.state.country}
                   humidity={this.state.humidity}
                   description={this.state.description}
+                  icon= { this.state.icon}
                   error={this.state.error}
                 />
               </div>

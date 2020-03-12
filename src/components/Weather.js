@@ -1,9 +1,10 @@
 import React, {Component} from "react";
-
+import WeatherIcons from './WeatherIcons'
 
 export default class Weather extends Component {
 render(){
-	const { city, country, temperature, temperature_min, temperature_max, humidity, pressure, visibility ,description, error} = this.props;
+	const { city, country, temperature, temperature_min, temperature_max,
+		 humidity, pressure, visibility, description, error} = this.props;
   return (
     <div className="weather__info">
       {city && country && (
@@ -11,7 +12,7 @@ render(){
 			<p className="weather-key">Location:
 				<span className="weather-value">{city}, {country}</span>
 			</p>
-
+			<WeatherIcons></WeatherIcons>
 			<p className="weather-key">Temperature:
 				<span className="weather-value"> {temperature}°C </span>
 			</p>
@@ -29,12 +30,13 @@ render(){
 				<span className="weather-value"> {pressure} hpa</span>
 			</p>
 			<p className="weather-key">Visivility:
-				<span className="weather-value"> {Number(visibility) / 1000} km</span>
+				<span className="weather-value"> { Number(visibility) / 1000} km</span>
 			</p>
 
 			<p className="weather-key">Conditions:
 				<span className="weather-value"> {description}</span>
 			</p>
+
         </div>
          )}
 
