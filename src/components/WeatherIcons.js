@@ -12,7 +12,7 @@ import { WiCloudyGusts } from "react-icons/wi";
   // NEED TO FIN A BETTER SOLUTION
   render() {
     const { description } = this.props;
-      if ( description === '	clear sky' || '	few clouds') {
+      if ( description === 'clear sky' || 'few clouds') {
         return <WiCloud></WiCloud>;
       } 
       else if ( description === 'broken clouds' || 'scattered clouds') {
@@ -24,13 +24,11 @@ import { WiCloudyGusts } from "react-icons/wi";
       else if ( description === 'thunderstorm' ) {
         return <WiDaySleetStorm></WiDaySleetStorm>;
       }
-      else if ( description === '	snow' ) {
+      else if ( description === 'snow' ) {
         return <WiDaySnow></WiDaySnow>;
       }
       else {
         return <WiCloudyGusts></WiCloudyGusts>;
-
       }
-
     }
 }

@@ -35,7 +35,6 @@ input, h1, h2, h3,p,span { font-family:'Roboto', sans-serif;}
 
 .form-container {
   background-color: darkcyan;
-  height: 70vh;
   padding-top: 50px;
   padding-left: 27px;
   width: 100%;
@@ -47,7 +46,6 @@ input[type="text"] {
   border-bottom: solid 1px lightseagreen;
   width: 30%;
   padding-bottom: 4px;
-  color: #fff !important;
   font-weight: lighter;
   letter-spacing: 2px;
   margin-bottom: 30px;
@@ -58,11 +56,6 @@ input[type="text"] {
 input[type="text"] {
   outline: none;
 }
-/* 
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px #1b344e inset;
-  -webkit-text-fill-color: #fff !important;
-} */
 
 button {
   border: 0;
@@ -104,7 +97,6 @@ button:active {
 }
 
 .weather-value {
-  color: #fff;
   font-weight: 200;
 }
 

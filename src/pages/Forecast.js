@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import Form from "../components/Form";
 import Weather from "../components/Weather";
+require('dotenv').config();
 
 export default class Forecast extends Component {
   state = {
@@ -16,12 +17,35 @@ export default class Forecast extends Component {
     description: undefined,
     error: undefined
   };
+
+  componentDidMount() {
+
+    console.log(process.env.REACT_APP_KEY);
+    
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${'Copenhagen'},${'Denmark'}&units=metric&appid=${process.env.REACT_APP_KEY}`)
+    .then(res => res.json())
+    .then(data => {
+        this.setState({
+            temperature: Math.floor(data.main.temp)  ,
+            temperature_min: Math.floor(data.main.temp_min),
+            temperature_max: Math.floor(data.main.temp_max),
+            city: data.name,
+            country: data.sys.country,
+            humidity: data.main.humidity,
+            pressure: data.main.pressure,
+            visibility: data.visibility,
+            description: data.weather[0].description,
+            error: ""
+        })
+    })
+  }
+
   getWeather = async e => {
     e.preventDefault();
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     const API = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=1d9eadfd959a277cf87d476b23a8cc86`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${process.env.REACT_APP_KEY}`
     );
 
     const data = await API.json();
