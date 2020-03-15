@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import "../App.css";
 import Titles from "../components/Titles";
-import WeatherIcons from '../components/WeatherIcons';
+import { WiCloud } from "react-icons/wi";
+import { WiDaySunnyOvercast } from "react-icons/wi";
+import { WiDayCloudy } from "react-icons/wi";
+import { WiDayCloudyHigh } from "react-icons/wi";
+import { WiCloudy } from "react-icons/wi";
+import { WiDayShowers } from "react-icons/wi";
+import { WiDaySleetStorm } from "react-icons/wi";
+import { WiDaySnow } from "react-icons/wi";
 require('dotenv').config();
 
 export default class Main extends Component {
@@ -43,15 +50,13 @@ export default class Main extends Component {
         humidity, pressure, visibility, description} = this.state;
 
      return(
-         <div className="default-values-container">
+         <div className="default-values-container form-container">
             <Titles></Titles>
             <div className="weather__info">
                 <p className="weather-key">Location:
                     <span className="weather-value">{city} {country}</span>
                 </p>
-                <p className="weather-key">
-                    <WeatherIcons></WeatherIcons>
-                </p>
+             
                 <p className="weather-key">Temperature:
                     <span className="weather-value"> {temperature}°C </span>
                 </p>
@@ -73,7 +78,22 @@ export default class Main extends Component {
                 </p>
 
                 <p className="weather-key">Conditions:
-                    <span className="weather-value"> {description}</span>
+                    <span className="weather-value description"> {description}</span>
+                    {(() => {
+                    switch (description) {
+                    case "clear sky":   return <WiDaySunnyOvercast></WiDaySunnyOvercast>;
+                    case "few clouds":   return <WiCloud></WiCloud>;
+                    case "broken clouds": return <WiCloudy></WiCloudy>;
+                    case "scattered clouds": return <WiDayCloudy></WiDayCloudy>;
+                    case "overcast clouds":  return <WiDayCloudyHigh></WiDayCloudyHigh>;
+                    case "shower rain":  return <WiDayShowers></WiDayShowers>;
+                    case "rain":  return <WiDayShowers></WiDayShowers>;
+                    case "light rain":  return <WiDayShowers></WiDayShowers>;
+                    case "thunderstorm":  return <WiDaySleetStorm></WiDaySleetStorm>;
+                    case "snow":  return <WiDaySnow></WiDaySnow>;
+                    default:      return <WiDayCloudy></WiDayCloudy>;
+                    }
+                     })()}
                 </p>
 
             </div>

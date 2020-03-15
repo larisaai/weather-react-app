@@ -34,7 +34,6 @@ input, h1, h2, h3,p,span { font-family:'Roboto', sans-serif;}
 
 
 .form-container {
-  background-color: darkcyan;
   padding-top: 50px;
   padding-left: 27px;
   width: 100%;
@@ -90,16 +89,17 @@ button:active {
   border-bottom: solid 2px rgba(255, 255, 255, 0.06);
   padding: 0px 0 20px 0;
   font-weight: 400;
-}
+  border-bottom: solid 1px lightseagreen;
 
-.weather-key:last-child {
-  border: 0;
 }
 
 .weather-value {
   font-weight: 200;
-}
 
+}
+.description {
+  margin-right: 30px;
+}
 .weather__error {
   color: #f16051;
   font-size: 20px;
